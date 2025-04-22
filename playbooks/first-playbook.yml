@@ -1,0 +1,16 @@
+---
+- name: My First Ansible Playbook
+  hosts: labhosts
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install basic packages
+      apt:
+        name:
+          - git
+          - curl
+          - htop
+        state: present
